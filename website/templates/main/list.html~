@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block pagetitle %}Home{% endblock %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block primary %}
+<p>This is a site that I've been meaning to create for awhile now (but it's always been one of those things that kept making it to the back burner). This site was written in Python using Django. It really is a beautiful framework.</p>
+
+<p>I plan on updating my <a href = "/blog">blog</a> frequently, usually with nerdy tech stuff or something inspirational. Really whatever I'm interested in that day. I hope to start using this as a place to share code as well. My recent entries are to the left as well as some of the more interesting links I think are worth sharing (take the time to read them and you might learn something). The name iSutra came from the intersection between Zen/Tao Buddhism and its influences on the design of technology. Sutra's are Buddhist scriptures. Consider this the technology sutra.</p>
+
+<p>One last thing about this blog, it's still a work in progress. I'm still learning a lot (and always will be) so changes are going to be happening pretty frequently. Not to mention that at the moment I'm operating from my own home server with an unreliable network connection using DDNS.</p>
+
+
+{% endblock %}

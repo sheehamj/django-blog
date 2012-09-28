@@ -1,0 +1,1 @@
+This is a django project with three apps living inside of it, blog, links, and tagging. The basis of this project came from lifehacker.com. To run the project cd into the directory and type python manage.py runserver.

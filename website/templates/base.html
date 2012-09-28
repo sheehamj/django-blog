@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+{% load get_latest %}
+
+<html lang="en">
+
+	<head>
+
+		<title>Sheehan - {%block pagetitle %}{% endblock %}</title>
+	<style>
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 10;
+	border: 10;
+	outline: 10;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+header, footer, aside, nav, article, section {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+/* clears containers with floated elements, no need for extra markup! */
+.clear:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+body {
+	line-height: 1;
+	background: #f0f0f0;
+	border: none;
+	color: #333;
+	margin: 0 auto;
+	font: 14px/24px;
+	/*width: 750px;*/
+}
+
+h1 {
+	font: normal bold 34px/50px;
+	padding-top: 30px;
+}
+
+#mast h1 {
+	padding: 10px 0px 10px 50px;
+	margin: 0;
+	background: #999999;
+	color: #000;
+}
+
+h2{
+	font-style: italic;
+	line-height: 44px;
+	font-size: 20px;
+}
+
+p{
+	padding: 30px 0 0 0;
+}
+
+#date{
+	font-size: 10px;
+	padding: 10px 0 0 0;
+}
+
+nav#global {
+	padding: 10px 0;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background-color: #000000;
+}
+
+nav#global ul {
+	margin: 0 0 0 35%;  
+}
+
+#nav, #nav ul{
+     margin:0;
+     padding:0;
+	 /*width: 960px;*/
+     list-style-type:none;
+     list-style-position:outside;
+     position:relative;
+     line-height:2.0em;
+ }
+ 
+#nav a:link, #nav a:active, #nav a:visited{
+    display:block;
+    padding:0px 5px;
+    border:1px solid #333;
+    color:#fff;
+    text-decoration:none;
+    background-color:#000000;
+ }
+ 
+#nav a.main:link, #nav a.main:active, #nav a.main:visited{
+    padding:0px 72px;
+} 
+
+#nav a:hover{
+    background-color:#fff;
+    color:#000;
+}
+
+#nav li{
+    float:left;
+    position:relative;
+}
+
+#nav ul {
+    position:absolute;
+    width:12em;
+    top:2em;
+    display:none;
+}
+
+#nav li ul a{
+    width:14em;
+    float:left;
+}
+
+#nav li ul {
+	z-index: 5;
+	}
+
+#nav ul ul{
+	top:auto;
+	}
+
+#nav li ul ul {
+    left:12em;
+    margin:0px 0 0 10px;
+    }
+
+#nav li:hover ul ul, #nav li:hover ul ul ul, #nav li:hover ul ul ul ul{
+    display:none;
+    }
+
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li li li li:hover ul{
+    display:block;
+    }
+
+#login{
+	float: right;
+	margin-right: 10px;
+	}
+
+#primary{
+	position: absolute;
+	margin-left:20%
+	}
+
+#block{
+	width: 200px;
+}
+
+#secondary{
+	position:absolute;
+	float: right;
+	width: 150px;
+	margin: 5% 0 0 2%;
+	line-height: 30px;
+	}
+
+a.links{
+	font-size: 12px;
+	text-decoration: none;
+}
+
+a.entries{
+	font-size: 14px;
+	text-decoration: none;
+}
+
+	</style>
+
+
+<!--	<link rel = "stylesheet" type = "text/css" href = "/home/sheehan/website/static/style.css" /> -->
+	</head>
+
+
+
+	<body>
+
+		<header id = "mast"><h1>the iSutra</h1></header>
+
+		<nav id = "global">
+
+			<ul id = "nav">
+
+				<li class = "main"><a href="/">home</a></li>
+
+
+
+				<li class = "main"><a href="/blog/">Blog</a></li>
+
+				<!--<li class = "main"><a href="/links/">Links</a></li>-->
+
+				<li class = "main"><a href="/about/">About</a></li>
+				<li id = "login" class = "main"><a href="/admin/">Login</a></li>
+
+
+
+			</ul>
+
+		</nav><br /><br /><br />
+
+		<div id="content">
+
+			<div id="primary">
+
+			<h1>{% block title %}{% endblock %}</h1>
+
+				{% block primary %}{% endblock %}
+
+			</div>
+
+			<div id="secondary">
+
+				<h3>Recent Entries:</h3>
+
+			{% get_latest blog.Entry 5 as recent_posts %}
+
+    				<ul class="archive">
+
+    				{% for obj in recent_posts %}
+
+				<li>
+
+				<a class = "entries" href="{{ obj.get_absolute_url }}" title="Permanent Link to {{ obj.title}}">{{ obj.title}}</a>
+
+				</li>
+
+    				{% endfor %}
+
+				</ul>
+
+				<h3>Recent Links</h3>
+
+				{% get_latest links.Link 5 as recent_links %}
+
+
+
+				<ul class="archive">
+
+				{% for obj in recent_links %}
+
+				<li>
+
+				<a class = "links" href="{{ obj.url }}" title="{{ obj.title}}">{{ obj.title|truncatewords_html:"5"|safe}}</a>
+
+				</li>
+
+				{% endfor %}
+
+
+
+				</ul>
+
+		</div>
+   <!-- <footer>
+    	<div class="clear">
+            <section id="about">
+                <header>
+                    <h3>About Us</h3>
+                </header>
+                <p></p>
+            </section>
+            <section id="site">
+                <header>
+                    <h3>Site Map</h3>
+                </header>
+                <nav id="siteMap">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+			<li><a href="/links/">Links</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+    </footer>-->
+
+	</body>
+
+</html>

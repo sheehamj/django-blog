@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block pagetitle %}Blog{% endblock %}
+
+{% block title %}Blog{% endblock %}
+
+{% block primary %}
+
+{% for object in latest %}
+
+	<h2>{{ object.title }}</h2>
+
+
+
+	<p id = "date">{{ object.pub_date }}</p>
+
+	 {{ object.body_html|truncatewords_html:"20"|safe }}
+
+	<p>tags: {% for tag in object.get_tags%}<a href="/blog/tags/{{tag.name|slugify}}/">{{tag}}</a>{% endfor %}</p>
+
+	<p><a href="{{object.get_absolute_url}}">read more</a></p>
+
+
+
+{% endfor %}
+
+{% endblock %}

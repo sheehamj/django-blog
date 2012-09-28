@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block pagetitle %}Tags{% endblock %}
+
+{% block title %}{{Tag.get_tags}}{% endblock %}
+
+{% block primary %}
+
+{% for object in latest %}
+
+	<p>tags: {% for tag in object.get_tags%}<a href="/blog/tags/{{tag.name|slugify}}/">{{tag}}</a>{% endfor %}</p>
+
+{% endfor %}
+
+{% endblock %}
